@@ -1,0 +1,33 @@
+
+List of Data Science Terms:
+
+Random Forest - A random forest is an ensemble learning method that combines the predictions from multiple decision trees to produce a more accurate and stable prediction. It is a type of supervised learning algorithm that can be used for both classification and regression tasks. (GeeksforGeeks)
+
+Random Forest Regression - Random Forest Regression technique for predicting numerical values. It predicts continuous values by averaging the results of multiple decision trees.
+Random Forest Regression works by creating multiple of decision trees each trained on a random subset of the data. The process begins with Bootstrap sampling where random rows of data are selected with replacement to form different training datasets for each tree. After this we do feature sampling where only a random subset of features is used to build each tree ensuring diversity in the models.
+After the trees are trained each tree make a prediction and the final prediction for regression tasks is the average of all the individual tree predictions and this process is called as Aggregation.
+
+Parameters of a Random Forest Regression - 
+n_estimators: We know that a random forest is nothing but a group of many decision trees, the n_estimator parameter controls the number of trees inside the classifier. We may think that using many trees to fit a model will help us to get a more generalized result, but this is not always the case. However, it will not cause any overfitting but can certainly increase the time complexity of the model. The default number of estimators is 100 in scikit-learn.
+max_depth: It governs the maximum height upto which the trees inside the forest can grow. It is one of the most important hyperparameters when it comes to increasing the accuracy of the model, as we increase the depth of the tree the model accuracy increases upto a certain limit but then it will start to decrease gradually because of overfitting in the model. It is important to set its value appropriately to avoid overfitting. The default value is set to None, None specifies that the nodes inside the tree will continue to grow until all leaves become pure or all leaves contain less than min_samples_split (another hyperparameter).
+min_samples_split: It specifies the minimum amount of samples an internal node must hold in order to split into further nodes. If we have a very low value of min_samples_splits then, in this case, our tree will continue to grow and start overfitting. By increasing the value of min_samples_splits we can decrease the total number of splits thus limiting the number of parameters in the model and thus can aid in reducing the overfitting in the model. However, the value should not be kept very large that a number of parameters drop extremely causing the model to underfit. We generally keep min_samples_split value between 2 and 6. However, the default value is set to 2.
+min_samples_leaf:  It specifies the minimum amount of samples that a node must hold after getting split. It also helps to reduce overfitting when we have ample amount of parameters. Less number of parameters can lead to overfitting also, we should keep in mind that increasing the value to a large number can lead to less number of parameters and in this case model can underfit also. The default value is set to 1.
+max_features: Random forest takes random subsets of features and tries to find the best split.  max_features helps to find the number of features to take into account in order to make the best split. It can take four values "auto", "sqrt", "log2" and None.
+In case of auto: considers max_features = sqrt(n_features)
+In case of sqrt: considers max_features = sqrt(n_features), it is same as auto
+In case of log2: considers max_features = log2(n_features)
+In case of None: considers max_features = n_features
+max_leaf_nodes: It sets a limit on the splitting of the node and thus helps to reduce the depth of the tree, and effectively helps in reducing overfitting. If the value is set to None, the tree continues to grow infinitely.
+max_samples: This hyperparameter helps to choose maximum number of samples from the training dataset to train each individual tree (GeeksForGeeks).
+
+
+* By default, bootstrap=True in RandomForestRegressor from sklearn.ensemble.
+
+* That means each decision tree is trained on a bootstrapped sample of the training data (sampled with replacement).
+
+* This is part of how Random Forests create diverse trees and reduce overfitting.
+
+Mean_Absolute_Error -  (MAE) encapsulates the essence of prediction accuracy. It quantifies the average magnitude of errors in a set of predictions, without considering their direction. This characteristic makes it particularly favorable for analysts and data scientists who need a straightforward measure to evaluate and compare different models (Dataconomy).
+
+R² (R-squared), also known as the coefficient of determination, is widely used as a metric to evaluate the performance of regression models. It is commonly used to quantify goodness of fit in statistical modeling, and it is a default scoring metric for regression models both in popular statistical modeling and Machine Learning frameworks, from statsmodels to scikit-learn (TowardsDataScience).
+
