@@ -31,3 +31,4 @@ Mean_Absolute_Error -  (MAE) encapsulates the essence of prediction accuracy. It
 
 R² (R-squared), also known as the coefficient of determination, is widely used as a metric to evaluate the performance of regression models. It is commonly used to quantify goodness of fit in statistical modeling, and it is a default scoring metric for regression models both in popular statistical modeling and Machine Learning frameworks, from statsmodels to scikit-learn (TowardsDataScience).
 
+Pipeline - A machine learning pipeline is a structured workflow that automates the process of building, training, and deploying machine learning models. It includes steps like data collection, preprocessing, model training, and evaluation, making the development process more efficient and scalable. (GeeksforGeeks)
